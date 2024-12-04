@@ -26,11 +26,13 @@ public class StudentService {
         Laptop laptop = new Laptop();
         laptop.setBrand("Dell");
         laptop.setModel("Intel");
-        laptopRepository.save(laptop);
+        //laptopRepository.save(laptop);
+        //If you don't use cascading, you would need to manually save the Laptop before saving the Student
 
         Student student = new Student();
         student.setName("Alice");
         student.setLaptop(laptop);
+        //Automatically saves the associated Laptop entity when you save the Student entity, due to Cascading Type set to ALL
         studentRepository.save(student); // Saves both Student and Laptop
 
     }
