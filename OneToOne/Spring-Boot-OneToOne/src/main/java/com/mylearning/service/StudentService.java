@@ -38,3 +38,11 @@ public class StudentService {
         studentRepository.save(student); // Saves both Student and Laptop
     }
 }
+
+//Student Table
+//id	name	laptop_id
+//1	   Alice	1
+
+//Laptop Table
+//id	brand	model
+//1	   Dell	   Intel
