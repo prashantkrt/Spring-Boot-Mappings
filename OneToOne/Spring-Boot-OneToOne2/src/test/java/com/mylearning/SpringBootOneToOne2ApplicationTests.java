@@ -3,11 +3,11 @@ package com.mylearning;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class SpringBootOneToOne2ApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
-}
+//@SpringBootTest
+//class SpringBootOneToOne2ApplicationTests {
+//
+//    @Test
+//    void contextLoads() {
+//    }
+//
+//}

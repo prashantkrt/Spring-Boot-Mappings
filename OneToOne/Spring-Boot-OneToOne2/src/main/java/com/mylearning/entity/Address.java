@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
+@Entity(name="Address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,5 +19,5 @@ public class Address {
 
     // inverse side, and it won't be maintaining the foreign key
     @OneToOne(mappedBy = "address",cascade = CascadeType.ALL)
-    private Address address;
+    private User user;
 }
