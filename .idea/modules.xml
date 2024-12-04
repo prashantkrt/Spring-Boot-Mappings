@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mappings.iml" filepath="$PROJECT_DIR$/Mappings.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OneToOne/Spring-Boot-OneToOne/Spring-Boot-OneToOne.iml" filepath="$PROJECT_DIR$/OneToOne/Spring-Boot-OneToOne/Spring-Boot-OneToOne.iml" />
     </modules>
   </component>
 </project>
