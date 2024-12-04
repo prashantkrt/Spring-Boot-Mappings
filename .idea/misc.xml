@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/OneToOne/Spring-Boot-OneToOne/pom.xml" />
         <option value="$PROJECT_DIR$/OneToOne/Spring-Boot-OneToOne2/pom.xml" />
         <option value="$PROJECT_DIR$/ManyToMany/Spring-Boot-ManyToMany/pom.xml" />
+        <option value="$PROJECT_DIR$/ManyToOne/Spring-Boot-ManyToOne/pom.xml" />
+        <option value="$PROJECT_DIR$/ManyToOne/Spring-Boot-ManyToOne2/pom.xml" />
       </list>
     </option>
   </component>

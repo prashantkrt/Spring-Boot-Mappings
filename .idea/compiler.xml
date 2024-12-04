@@ -7,8 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-Boot-OneToOne2" />
         <module name="Spring-Boot-ManyToMany" />
+        <module name="Spring-Boot-ManyToOne" />
+        <module name="Spring-Boot-OneToOne2" />
+        <module name="Spring-Boot-ManyToOne2" />
         <module name="Spring-Boot-OneToOne" />
       </profile>
     </annotationProcessing>
@@ -16,6 +18,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring-Boot-ManyToMany" options="-parameters" />
+      <module name="Spring-Boot-ManyToOne" options="-parameters" />
+      <module name="Spring-Boot-ManyToOne2" options="-parameters" />
       <module name="Spring-Boot-OneToOne" options="-parameters" />
       <module name="Spring-Boot-OneToOne2" options="-parameters" />
     </option>
