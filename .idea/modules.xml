@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mappings.iml" filepath="$PROJECT_DIR$/Mappings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ManyToMany/Spring-Boot-ManyToMany/Spring-Boot-ManyToMany.iml" filepath="$PROJECT_DIR$/ManyToMany/Spring-Boot-ManyToMany/Spring-Boot-ManyToMany.iml" />
     </modules>
   </component>
 </project>

@@ -6,10 +6,11 @@
       <list>
         <option value="$PROJECT_DIR$/OneToOne/Spring-Boot-OneToOne/pom.xml" />
         <option value="$PROJECT_DIR$/OneToOne/Spring-Boot-OneToOne2/pom.xml" />
+        <option value="$PROJECT_DIR$/ManyToMany/Spring-Boot-ManyToMany/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
