@@ -2,10 +2,13 @@ package com.mylearning.springbootmanytomany.service;
 
 import com.mylearning.springbootmanytomany.entity.Course;
 import com.mylearning.springbootmanytomany.entity.Student;
+import com.mylearning.springbootmanytomany.repository.CourseRepository;
 import com.mylearning.springbootmanytomany.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Set;
 
 @Service
 @Transactional
@@ -13,6 +16,8 @@ public class StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
+    private CourseRepository courseRepository;
 
     public void createStudentsAndCourses() {
         // Create many Courses
@@ -44,7 +49,29 @@ public class StudentService {
         studentRepository.save(alice);
         studentRepository.save(bob);
         studentRepository.save(charlie);
+
+        Student student = studentRepository.findById(1L).orElseThrow();
+        Set<Course> courses = student.getCourses();
+
+        for (Course course : courses) {
+            System.out.println(course.getTitle()); // Mathematics, Physics
+        }
+
+        //we can also fetch student from course even though it doesn't uses any join table
+        Course course = courseRepository.findById(1).orElseThrow();
+        Set<Student> students = course.getStudents();
+
+        for (Student stu : students) {
+            System.out.println(stu.getName()); // Alice, Bob
+        }
+
+        //Remember:=>
+        //JPA does NOT store foreign keys directly in Student or Course for a @ManyToMany relationship.
+        //Instead, it creates a separate join table (student_course) to maintain the mapping.
+        //When you call course.getStudents(), Hibernate generates a query to fetch students from the student_course table using course_id.
     }
+
+
 }
 /*
 Database Representation

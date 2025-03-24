@@ -68,3 +68,72 @@ student_id   course_id
 3            103
 
  */
+
+//If JPA somehow allowed @JoinColumn in @ManyToMany, the table would need a way to store multiple values in a single column (which relational databases don't support).
+// This would result in a bad database design like this:
+//if we use this way
+//@ManyToMany
+//@JoinColumn(name = "course_id") // ❌ Incorrect usage
+//private List<Course> courses;
+
+/*
+
+❌ Incorrect Student Table (Hypothetical, if allowed)
+STUDENT TABLE:
++----+---------+------------+
+| id |  name   | course_id  |
++----+---------+------------+
+|  1 | Alice   | 1,2        |  ❌ Multiple course IDs in one column (not allowed)
+|  2 | Bob     | 1          |
+|  3 | Charlie | 2,3        |  ❌ Multiple values in one column
++----+---------+------------+
+
+❌ Incorrect Course Table (Hypothetical, if allowed)
+COURSE TABLE:
++----+------------------+-----------+
+| id |      title      | student_id |
++----+------------------+-----------+
+|  1 | Mathematics     | 1,2        |  ❌ Multiple student IDs in one column
+|  2 | Physics         | 1,3        |  ❌ Not a valid relational database structure
+|  3 | Computer Science| 3          |
++----+------------------+-----------+
+
+ */
+
+// ✅ Correct Approach (Using @JoinTable in Many-to-Many)
+// @ManyToMany
+// @JoinTable(
+//     name = "student_course",
+//     joinColumns = @JoinColumn(name = "student_id"),
+//     inverseJoinColumns = @JoinColumn(name = "course_id")
+// )
+// private List<Course> courses;
+
+/*
+How the Tables Should Actually Look (Correct)
++----+---------+
+| id |  name   |
++----+---------+
+|  1 | Alice   |
+|  2 | Bob     |
+|  3 | Charlie |
++----+---------+
+
++----+------------------+
+| id |      title       |
++----+------------------+
+|  1 | Mathematics      |
+|  2 | Physics          |
+|  3 | Computer Science |
++----+------------------+
+
++------------+-----------+
+| student_id | course_id |
++------------+-----------+
+|     1      |     1     |
+|     1      |     2     |
+|     2      |     1     |
+|     3      |     2     |
+|     3      |     3     |
++------------+-----------+
+ */
