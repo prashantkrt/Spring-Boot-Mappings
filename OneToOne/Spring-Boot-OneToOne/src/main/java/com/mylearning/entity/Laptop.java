@@ -17,3 +17,20 @@ public class Laptop {
     private String brand;
     private String model;
 }
+/*
+Student Table
+------------------------
+id   | name  | laptop_id
+-------------------------
+1    | Alice | 1
+
+
+==================================
+
+Laptop Table
+--------------------
+id   | brand | model
+--------------------
+ 1   | Dell  | Intel
+
+ */

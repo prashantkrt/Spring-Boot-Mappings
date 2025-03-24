@@ -24,3 +24,8 @@ public class UserService {
         userRepo.save(user); // Saves both User and Address due to CascadeType.ALL
     }
 }
+
+
+//By default, User can fetch Address, but Address cannot fetch User.
+//Fix: Use @JsonIgnore on the user field inside Address to prevent infinite recursion.
+//Alternative: Write a custom query (findByAddress) to fetch User from Address.

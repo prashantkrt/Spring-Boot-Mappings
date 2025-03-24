@@ -24,3 +24,20 @@ public class Student {
     // referencedColumnName = "id": Indicates the primary key column in the Laptop table being referenced.
     // This approach is used on the owning side of the relationship. The owning side is responsible for managing the foreign key.
 }
+/*
+
+Student Table
+-------------------------
+id   | name  | laptop_id
+-------------------------
+1    | Alice | 1
+
+================================================================
+
+Laptop Table
+---------------------
+id   | brand | model
+---------------------
+ 1    | Dell  | Intel
+
+ */

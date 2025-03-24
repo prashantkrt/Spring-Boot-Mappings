@@ -16,9 +16,12 @@ public class User {
 
     private String name;
 
-    // will maintain the foreign key
-    //This means all the following JPA operations (persist, merge, remove, refresh, detach) applied to the User entity will be cascaded to the associated Address entity.
+    // Will maintain the foreign key
+    // This means all the following JPA operations (persist, merge, remove, refresh, detach) applied to the User entity will be cascaded to the associated Address entity.
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 }
+
+//The Address entity is the inverse side (mappedBy = "address") → It does not maintain the foreign key.
+//The User entity owns the relationship (@JoinColumn(name = "address_id")) → It maintains the foreign key.
